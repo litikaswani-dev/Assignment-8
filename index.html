@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testimonials Grid Section</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap"
+    rel="stylesheet" />
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: hsl(210, 46%, 95%);
+      font-family: 'Barlow Semi Condensed', sans-serif;
+      padding: 70px 24px;
+    }
+
+    /* ── GRID WRAPPER ── */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto auto;
+      grid-template-areas:
+        "daniel   daniel   jonathan  kira"
+        "jeanette patrick  patrick   kira";
+      gap: 24px;
+      max-width: 1110px;
+      width: 100%;
+    }
+
+    /* ── BASE CARD ── */
+    .card {
+      border-radius: 8px;
+      padding: 26px 32px;
+      box-shadow: 40px 60px 50px -47px rgba(72, 85, 106, 0.25);
+    }
+
+    /* ── CARD COLOURS ── */
+    .card-purple {
+      background-color: hsl(263, 55%, 52%);
+      color: #fff;
+    }
+
+    .card-darkgray {
+      background-color: hsl(217, 19%, 35%);
+      color: #fff;
+    }
+
+    .card-white {
+      background-color: #ffffff;
+      color: hsl(219, 29%, 14%);
+    }
+
+    .card-darknavy {
+      background-color: hsl(219, 29%, 14%);
+      color: #fff;
+    }
+
+    /* ── GRID AREAS ── */
+    .daniel {
+      grid-area: daniel;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .jonathan {
+      grid-area: jonathan;
+    }
+
+    .jeanette {
+      grid-area: jeanette;
+    }
+
+    .patrick {
+      grid-area: patrick;
+    }
+
+    .kira {
+      grid-area: kira;
+    }
+
+    /* ── BIG QUOTE MARK on Daniel card ── */
+    .daniel .quote-svg {
+      position: absolute;
+      top: 0;
+      right: 88px;
+      width: 104px;
+      height: auto;
+      opacity: 1;
+      pointer-events: none;
+    }
+
+    /* ── PROFILE ROW ── */
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      background-size: cover;
+      background-position: center;
+      flex-shrink: 0;
+    }
+
+    .card-white .avatar {
+      border-color: hsl(263, 55%, 52%);
+    }
+
+    .profile-info .name {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .profile-info .status {
+      font-size: 0.6875rem;
+      font-weight: 500;
+      opacity: 0.5;
+    }
+
+    /* ── QUOTE HEADLINE ── */
+    .quote-headline {
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.35;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── BODY TEXT ── */
+    .quote-body {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      line-height: 1.7;
+      opacity: 0.7;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 760px) {
+      .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "daniel"
+          "jonathan"
+          "jeanette"
+          "patrick"
+          "kira";
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="grid-container">
+
+    <!-- Card 1: Daniel Clifford — purple, spans 2 columns -->
+    <article class="card card-purple daniel">
+      <!-- Decorative quotation mark matching Frontend Mentor reference -->
+      <svg class="quote-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 104 102">
+        <path
+          d="M104 102V59.727H84.114c0-5.871.689-11.182 2.068-15.933 1.379-4.75 3.42-9.287 6.125-13.61C95.012 25.861 98.73 22 103.461 18.6L88.244 0c-4.731 2.34-9.196 5.667-13.393 9.981-4.198 4.314-7.795 9.196-10.792 14.643-2.996 5.448-5.277 11.182-6.843 17.204C55.65 47.85 54.867 54.079 54.867 60.516V102H104zm-54.867 0V59.727H29.246c0-5.871.689-11.182 2.068-15.933 1.38-4.75 3.42-9.287 6.125-13.61 2.704-4.323 6.422-8.184 11.154-11.584L33.376 0c-4.731 2.34-9.195 5.667-13.393 9.981C15.786 14.295 12.19 19.177 9.192 24.624c-2.996 5.448-5.277 11.182-6.843 17.204C.783 47.85 0 54.079 0 60.516V102h49.133z"
+          fill="hsl(263, 40%, 70%)" fill-rule="evenodd" />
+      </svg>
+      <div class="profile">
+        <div class="avatar"
+          style="background-image:url('https://anoshaahmed.github.io/fem10-testimonials-grid/images/image-daniel.jpg');">
+        </div>
+        <div class="profile-info">
+          <p class="name">Daniel Clifford</p>
+          <p class="status">Verified Graduate</p>
+        </div>
+      </div>
+      <h2 class="quote-headline">
+        I received a job offer mid-course, and the subjects I learned were current,
+        if not more so, in the company I joined. I honestly feel I got every penny's worth.
+      </h2>
+      <p class="quote-body">
+        " I was an EMT for many years before I joined the bootcamp. I've been looking to make a
+        transition and have heard some people who had an amazing experience here. I signed up
+        for the free intro course and found it incredibly fun! I enrolled shortly thereafter.
+        The next 12 weeks was the best - and most grueling - time of my life. Since completing
+        the course, I've successfully switched careers, working as a Software Engineer at a VR startup. "
+      </p>
+    </article>
+
+    <!-- Card 2: Jonathan Walters — dark gray -->
+    <article class="card card-darkgray jonathan">
+      <div class="profile">
+        <div class="avatar"
+          style="background-image:url('https://anoshaahmed.github.io/fem10-testimonials-grid/images/image-jonathan.jpg');">
+        </div>
+        <div class="profile-info">
+          <p class="name">Jonathan Walters</p>
+          <p class="status">Verified Graduate</p>
+        </div>
+      </div>
+      <h2 class="quote-headline">The team was very supportive and kept me motivated</h2>
+      <p class="quote-body">
+        " I started as a total newbie with virtually no coding skills. I now work as a mobile engineer
+        for a big company. This was one of the best investments I've made in myself. "
+      </p>
+    </article>
+
+    <!-- Card 5: Kira Whittle — white, spans both rows (col 4) -->
+    <article class="card card-white kira">
+      <div class="profile">
+        <div class="avatar"
+          style="background-image:url('https://anoshaahmed.github.io/fem10-testimonials-grid/images/image-kira.jpg'); border-color:hsl(263,55%,52%);">
+        </div>
+        <div class="profile-info">
+          <p class="name">Kira Whittle</p>
+          <p class="status">Verified Graduate</p>
+        </div>
+      </div>
+      <h2 class="quote-headline">Such a life-changing experience. Highly recommended!</h2>
+      <p class="quote-body">
+        " Before joining the bootcamp, I've never written a line of code. I needed some structure from
+        professionals who can help me learn programming step by step. I was encouraged to enroll by a former
+        student of theirs who can only say wonderful things about the program. The entire curriculum and staff
+        did not disappoint. They were very hands-on and I never had to wait long for assistance. The agile team
+        project, in particular, was outstanding. It took my learning to the next level in a way that no tutorial
+        could ever have. In fact, I've often referred to it during interviews as an example of my development
+        experience. It certainly helped me land a job as a full-stack developer after receiving multiple offers.
+        100% recommend! "
+      </p>
+    </article>
+
+    <!-- Card 3: Jeanette Harmon — white -->
+    <article class="card card-white jeanette">
+      <div class="profile">
+        <div class="avatar"
+          style="background-image:url('https://anoshaahmed.github.io/fem10-testimonials-grid/images/image-jeanette.jpg'); border-color:hsl(263,55%,52%);">
+        </div>
+        <div class="profile-info">
+          <p class="name">Jeanette Harmon</p>
+          <p class="status">Verified Graduate</p>
+        </div>
+      </div>
+      <h2 class="quote-headline">An overall wonderful and rewarding experience</h2>
+      <p class="quote-body">
+        " Thank you for the wonderful experience! I now have a job I really enjoy, and make a good living
+        while doing something I love. "
+      </p>
+    </article>
+
+    <!-- Card 4: Patrick Abrams — dark navy, spans 2 columns -->
+    <article class="card card-darknavy patrick">
+      <div class="profile">
+        <div class="avatar"
+          style="background-image:url('https://anoshaahmed.github.io/fem10-testimonials-grid/images/image-patrick.jpg');">
+        </div>
+        <div class="profile-info">
+          <p class="name">Patrick Abrams</p>
+          <p class="status">Verified Graduate</p>
+        </div>
+      </div>
+      <h2 class="quote-headline">
+        Awesome teaching support from TAs who did the bootcamp themselves. Getting guidance
+        from them and learning from their experiences was easy.
+      </h2>
+      <p class="quote-body">
+        " The staff seem genuinely concerned about my progress which I find really refreshing. The program
+        gave me the confidence necessary to be able to go out in the world and present myself as a capable
+        junior developer. The standard is above the rest. You will get the personal attention you need from
+        an incredible community of smart and amazing people. "
+      </p>
+    </article>
+
+  </main>
+
+</body>
+
+</html>
